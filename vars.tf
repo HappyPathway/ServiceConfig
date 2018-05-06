@@ -7,7 +7,7 @@ variable "admins" {
     type = "list"
 }
 
-variables "repo" {}
+variable "repo" {}
 
 variable "nightshift_users" {
     type = "list"
