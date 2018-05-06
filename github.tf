@@ -1,22 +1,26 @@
 module "admin_team" {
+  source = "git@github.com:HappyPathway/GitHubTeam.git"
   team = "${var.repo}Admin"
   description = "${var.repo} Administrators"
   privacy = "secret"
 }
 
 module "admin_repo_team" {
+  source = "git@github.com:HappyPathway/GitHubTeamRepo.git"
   team_id = "${module.admin_team.id}"
   repository = "${var.repo}"
   permission = "admin"
 }
 
 module "dev_team" {
+  source = "git@github.com:HappyPathway/GitHubTeam.git"
   team = "${var.repo}Dev"
   description = "${var.repo} Developers"
   privacy = "secret"
 }
 
 module "dev_repo_team" {
+  source = "git@github.com:HappyPathway/GitHubTeamRepo.git"
   team_id = "${module.dev_team.id}"
   repository = "${var.repo}"
   permission = "push"
