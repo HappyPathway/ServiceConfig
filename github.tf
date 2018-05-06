@@ -7,8 +7,8 @@ module "admin_team" {
 
 module "admin_repo_team" {
   source = "git@github.com:HappyPathway/GitHubTeamRepo.git"
-  team_id = "${module.admin_team.id}"
-  repository = "${var.repo}"
+  team_id = "${module.admin_team.team_id}"
+  repo = "${var.repo}"
   permission = "admin"
 }
 
@@ -21,8 +21,8 @@ module "dev_team" {
 
 module "dev_repo_team" {
   source = "git@github.com:HappyPathway/GitHubTeamRepo.git"
-  team_id = "${module.dev_team.id}"
-  repository = "${var.repo}"
+  team_id = "${module.dev_team.team_id}"
+  repo = "${var.repo}"
   permission = "push"
 }
 
