@@ -1,5 +1,5 @@
 variable "repo" {}
-variables "devs" {
+variable "devs" {
     type = "list"
 }
 
