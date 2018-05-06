@@ -1,4 +1,5 @@
 variable "repo" {}
+
 variable "devs" {
     type = "list"
 }
@@ -6,8 +7,6 @@ variable "devs" {
 variable "admins" {
     type = "list"
 }
-
-variable "repo" {}
 
 variable "nightshift_users" {
     type = "list"
