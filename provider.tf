@@ -6,5 +6,5 @@ provider "github" {
 
 # Configure the PagerDuty provider
 provider "pagerduty" {
-  token = "${data.vault_generic_secret.rundeck_auth.data.pagerduty_token}"
+  token = "${data.vault_generic_secret.credentials.data.pagerduty_token}"
 }
