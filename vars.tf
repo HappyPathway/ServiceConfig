@@ -15,5 +15,3 @@ variable "nightshift_users" {
 variable "dayshift_users" {
     type = "list"
 }
-
-variable "pagerduty_token" {}
