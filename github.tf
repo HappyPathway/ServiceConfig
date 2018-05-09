@@ -31,7 +31,7 @@ resource "github_team_membership" "dev_team_membership" {
   count = "${length(var.admins)}"
   team_id  = "${module.dev_team.id}"
   username = "${elements(var.devs, count.index)}"
-  role     = "maintainer"
+  role     = "member"
 }
 
 resource "github_team_membership" "admin_team_membership" {
@@ -39,6 +39,6 @@ resource "github_team_membership" "admin_team_membership" {
   count = "${length(var.admins)}"
   team_id  = "${module.admin_team.id}"
   username = "${elements(var.admins, count.index)}"
-  role     = "maintainer"
+  role     = "member"
 }
 
