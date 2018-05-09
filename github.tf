@@ -27,7 +27,6 @@ module "dev_repo_team" {
 }
 
 resource "github_team_membership" "dev_team_membership" {
-  source = "git@github.com:HappyPathway/GitHubTeamMembership.git"
   count = "${length(var.admins)}"
   team_id  = "${module.dev_team.team_id}"
   username = "${element(var.devs, count.index)}"
@@ -35,7 +34,6 @@ resource "github_team_membership" "dev_team_membership" {
 }
 
 resource "github_team_membership" "admin_team_membership" {
-  source = "git@github.com:HappyPathway/GitHubTeamMembership.git"
   count = "${length(var.admins)}"
   team_id  = "${module.admin_team.team_id}"
   username = "${element(var.admins, count.index)}"
