@@ -1,13 +1,12 @@
 variable "repo" {}
-variables "devs" {
+
+variable "devs" {
     type = "list"
 }
 
 variable "admins" {
     type = "list"
 }
-
-variables "repo" {}
 
 variable "nightshift_users" {
     type = "list"
@@ -16,3 +15,5 @@ variable "nightshift_users" {
 variable "dayshift_users" {
     type = "list"
 }
+
+variable "pagerduty_token" {}
