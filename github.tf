@@ -7,8 +7,8 @@ module "admin_team" {
 
 module "admin_repo_team" {
   source = "git@github.com:HappyPathway/GitHubTeamRepo.git"
-  team_id = "${module.admin_team.id}"
-  repository = "${var.repo}"
+  team_id = "${module.admin_team.team_id}"
+  repo = "${var.repo}"
   permission = "admin"
 }
 
@@ -21,15 +21,15 @@ module "dev_team" {
 
 module "dev_repo_team" {
   source = "git@github.com:HappyPathway/GitHubTeamRepo.git"
-  team_id = "${module.dev_team.id}"
-  repository = "${var.repo}"
+  team_id = "${module.dev_team.team_id}"
+  repo = "${var.repo}"
   permission = "push"
 }
 
 resource "github_team_membership" "dev_team_membership" {
   source = "git@github.com:HappyPathway/GitHubTeamMembership.git"
   count = "${length(var.admins)}"
-  team_id  = "${module.dev_team.id}"
+  team_id  = "${module.dev_team.team_id}"
   username = "${elements(var.devs, count.index)}"
   role     = "member"
 }
@@ -37,7 +37,7 @@ resource "github_team_membership" "dev_team_membership" {
 resource "github_team_membership" "admin_team_membership" {
   source = "git@github.com:HappyPathway/GitHubTeamMembership.git"
   count = "${length(var.admins)}"
-  team_id  = "${module.admin_team.id}"
+  team_id  = "${module.admin_team.team_id}"
   username = "${elements(var.admins, count.index)}"
   role     = "member"
 }
