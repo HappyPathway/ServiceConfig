@@ -15,3 +15,7 @@ variable "nightshift_users" {
 variable "dayshift_users" {
     type = "list"
 }
+
+variable "setup" {
+    defautl = false
+}

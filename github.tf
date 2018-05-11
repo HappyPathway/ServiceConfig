@@ -3,6 +3,7 @@ module "admin_team" {
   team = "${var.repo}Admin"
   description = "${var.repo} Administrators"
   privacy = "secret"
+  setup = "${var.setup}"
 }
 
 module "admin_repo_team" {
@@ -17,6 +18,7 @@ module "dev_team" {
   team = "${var.repo}Dev"
   description = "${var.repo} Developers"
   privacy = "secret"
+  setup = "${var.setup}"
 }
 
 module "dev_repo_team" {
