@@ -17,5 +17,5 @@ variable "dayshift_users" {
 }
 
 variable "setup" {
-    defautl = false
+    default = false
 }
